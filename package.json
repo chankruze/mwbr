@@ -1,0 +1,36 @@
+{
+	"name": "mwbr",
+	"version": "1.0.0",
+	"main": "index.jsx",
+	"repository": "git@github.com:chankruze/wbr.git",
+	"author": "chankruze <chankruze@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "NODE_ENV='development' webpack-dev-server --open --mode development",
+		"build": "NODE_ENV='production' webpack --mode production --progress",
+		"lint": "eslint src/**/*.jsx",
+		"dev": "yarn lint && yarn start"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.8",
+		"@babel/preset-env": "^7.12.7",
+		"@babel/preset-react": "^7.12.7",
+		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.2.1",
+		"css-loader": "^5.0.1",
+		"eslint": "^7.14.0",
+		"eslint-plugin-react": "^7.21.5",
+		"html-loader": "^1.3.2",
+		"html-webpack-plugin": "^4.5.0",
+		"interpolate-html-plugin": "^3.0.0",
+		"mini-css-extract-plugin": "^1.3.1",
+		"node-sass": "^5.0.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"sass-loader": "^10.1.0",
+		"style-loader": "^2.0.0",
+		"webpack": "^4.44.2",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0"
+	}
+}
