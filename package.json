@@ -2,12 +2,12 @@
 	"name": "mwbr",
 	"version": "1.0.0",
 	"main": "index.jsx",
-	"repository": "git@github.com:chankruze/wbr.git",
+	"repository": "git@github.com:chankruze/mwbr.git",
 	"author": "chankruze <chankruze@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"start": "NODE_ENV='development' webpack-dev-server --open --mode development",
-		"build": "NODE_ENV='production' webpack --mode production --progress",
+		"build": "yarn lint && rm -rf dist && NODE_ENV='production' webpack --mode production --progress",
 		"lint": "eslint src/**/*.jsx",
 		"dev": "yarn lint && yarn start"
 	},
@@ -17,6 +17,7 @@
 		"@babel/preset-react": "^7.12.7",
 		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.2.1",
+		"copy-webpack-plugin": "^6.3.2",
 		"css-loader": "^5.0.1",
 		"eslint": "^7.14.0",
 		"eslint-plugin-react": "^7.21.5",
