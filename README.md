@@ -7,7 +7,7 @@ Copyright (c) Geekofia 2020 and beyond
 
 # Minimal WBR (Webpack Babel React) Setup
 
-This setup is a very basic setup for a react app. Unlike CRA (create-react-app), this setup gives access to webpack config directly, so we do NOT have to fork of the `react-scripts` or tweak the `create-react-app` webpack config(s) without using `eject` or even we don't have to use `react-app-rewired`.
+This is a very basic setup for a react app. Unlike CRA (create-react-app), this setup gives access to webpack config directly, so we **DON'T** have to fork the `react-scripts` or tweak `create-react-app` webpack config(s) using `eject` and even we don't have to use `react-app-rewired` package.
 
 Default support for:
 
