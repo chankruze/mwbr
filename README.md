@@ -15,6 +15,36 @@ Default support for:
 - `sass` (primary), `scss` (primary), `css`.
 - `module.sass` (primary), `module.scss` (primary), `module.css`.
 
+Project structure:
+
+```
+├── package.json
+├── public
+│   ├── CNAME
+│   ├── _redirects
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── components
+│   │   ├── App.jsx
+│   │   └── App.module.sass
+│   ├── index.jsx
+│   └── index.sass
+├── .babelrc
+├── .env
+├── .eslintrc.js
+├── .gitignore
+├── .babelrc
+├── .env
+├── .eslintrc.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── webpack.config.js
+└── yarn.lock
+```
+
 What's preconfigured:
 
 - babel
@@ -22,6 +52,29 @@ What's preconfigured:
 - es-lint
 - `_redirects` rule for routing in netlify hosting
 - `CNAME` for custom domain
+- `dotenv` for declaring environmental variables (No need to append `REACT_APP` prefix to your variables)
+
+#### `_redirects` (public dir)
+
+```
+/*    /index.html   200
+```
+
+This redirect rule above will serve the `index.html` instead of giving a 404 no matter what URL the browser requests on a netlify deployment.
+
+#### `.env` (project root dir)
+
+```
+TEST_VALUE=EnvironmentalVariable
+```
+
+this is accessible as `process.env.TEST_VALUE`
+
+#### `CNAME` (public dir)
+
+```
+example.com
+```
 
 ## How to Use ?
 
