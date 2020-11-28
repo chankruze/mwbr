@@ -23,7 +23,10 @@ const App = () => {
 	return (
 		<div className={styles.app}>
 			<h1>{time}</h1>
-			<p className={styles.desc}>App created using chankruze&apos;s minimal WBR setup</p>
+			<p>{process.env.TEST_VALUE}</p>
+			<p className={styles.desc}>
+				App created using chankruze&apos;s minimal WBR setup
+			</p>
 		</div>
 	);
 };

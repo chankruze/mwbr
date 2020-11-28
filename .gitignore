@@ -20,3 +20,5 @@
 *debug.log*
 *error.log*
 *.log*
+
+.env
