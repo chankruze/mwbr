@@ -15,8 +15,10 @@ const { merge } = require('webpack-merge');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
-	console.log('mode', mode, 'presets', presets);
 	return merge({
+		devServer: {
+			hotOnly: true
+		},
 		module: {
 			rules: [
 				// Files: js/jsx,
@@ -28,7 +30,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 						loader: 'babel-loader'
 					}
 				},
-				// Files: sass/scss,
+				// Files: .sass/.scss,
 				// Pipes: css-loader
 				{
 					test: /\.module\.s(a|c)ss$/,
@@ -49,6 +51,8 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 						}
 					]
 				},
+				// Files: .module.sass/scss,
+				// Pipes: sass-loader
 				{
 					test: /\.s(a|c)ss$/,
 					exclude: /\.module.(s(a|c)ss)$/,
@@ -61,6 +65,31 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 								sourceMap: isDevelopment
 							}
 						}
+					]
+				},
+				// Files: .module.css,
+				// Pipes: css-loader
+				{
+					test: /\.module\.css$/,
+					use: [
+						isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+						{
+							loader: 'css-loader',
+							options: {
+								modules: true,
+								sourceMap: isDevelopment
+							}
+						}
+					]
+				},
+				// Files: .css,
+				// Pipes: sass-loader
+				{
+					test: /\.css$/,
+					exclude: /\.module.(sa|sc|c)ss$/,
+					use: [
+						isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+						'css-loader'
 					]
 				},
 				// Files: html,
