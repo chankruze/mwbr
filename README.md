@@ -35,10 +35,6 @@ Project structure:
 ├── .env
 ├── .eslintrc.js
 ├── .gitignore
-├── .babelrc
-├── .env
-├── .eslintrc.js
-├── .gitignore
 ├── .prettierignore
 ├── .prettierrc
 ├── webpack.config.js
@@ -47,6 +43,8 @@ Project structure:
 
 What's preconfigured:
 
+- HOT module replacement enabled
+- Live reloading enabled
 - babel
 - prettier
 - es-lint
