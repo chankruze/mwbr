@@ -30,7 +30,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 						loader: 'babel-loader'
 					}
 				},
-				// Files: .sass/.scss,
+				// Files: .module.sass/.scss,
 				// Pipes: css-loader
 				{
 					test: /\.module\.s(a|c)ss$/,
@@ -51,7 +51,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 						}
 					]
 				},
-				// Files: .module.sass/scss,
+				// Files: .sass/scss,
 				// Pipes: sass-loader
 				{
 					test: /\.s(a|c)ss$/,
@@ -101,6 +101,42 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 							loader: 'html-loader'
 						}
 					]
+				},
+				{
+					test: /\.(png|jpg|gif)$/,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								outputPath: 'images/',
+								name: '[name][hash].[ext]'
+							}
+						}
+					]
+				},
+				{
+					test: /\.svg$/,
+					use: [
+						{
+							loader: '@svgr/webpack',
+							options: {
+								jsx: true
+							}
+						}
+					]
+				},
+				{
+					test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+					exclude: /images/,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								outputPath: 'fonts/',
+								name: '[name][hash].[ext]'
+							}
+						}
+					]
 				}
 			]
 		},
@@ -122,10 +158,12 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 				]
 			}),
 			new webpack.ProgressPlugin(),
-			new Dotenv()
+			new Dotenv(),
+			new webpack.SourceMapDevToolPlugin({})
 		],
 		resolve: {
 			extensions: ['.js', '.jsx', '.scss', '.sass']
-		}
+		},
+		devtool: false
 	});
 };
