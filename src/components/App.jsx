@@ -5,7 +5,6 @@ Created: Tue Nov 24 2020 07:04:05 GMT+0530 (India Standard Time)
 Copyright (c) Geekofia 2020 and beyond
 */
 
-import React from 'react';
 import { useState, useEffect } from 'react';
 import styles from './App.module.sass';
 

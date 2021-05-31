@@ -5,7 +5,6 @@ Created: Tue Nov 24 2020 07:29:31 GMT+0530 (India Standard Time)
 Copyright (c) Geekofia 2020 and beyond
 */
 
-import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
