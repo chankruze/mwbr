@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": true,
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"watch": true,
+		"jsx": "react",
+		"moduleResolution": "node"
+	},
+	"include": ["**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"],
+	"awesomeTypescriptLoaderOptions": {
+		"useWebpackText": true,
+		"useTranspileModule": true,
+		"doTypeCheck": true,
+		"forkChecker": true
+	}
+}

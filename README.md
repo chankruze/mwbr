@@ -11,34 +11,47 @@ This is a very basic setup for a react app. Unlike CRA (create-react-app), this 
 
 Default support for:
 
-- `jsx` (primary), `js`
+- `tsx` (primary), `ts`
 - `sass` (primary), `scss` (primary), `css`.
 - `module.sass` (primary), `module.scss` (primary), `module.css`.
 
 Project structure:
 
 ```
+├── README.md
+├── _config.yml
+├── declarations.d.ts
+├── dist
+│   ├── CNAME
+│   ├── _redirects
+│   ├── index.html
+│   ├── main.7f0d5d4e10f1bf5fcaaa.css
+│   ├── main.js
+│   ├── manifest.json
+│   └── robots.txt
 ├── package.json
 ├── public
-│   ├── CNAME
-│   ├── _redirects
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
+│   ├── CNAME
+│   ├── _redirects
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
 ├── src
-│   ├── components
-│   │   ├── App.jsx
-│   │   └── App.module.sass
-│   ├── index.jsx
-│   └── index.sass
-├── .babelrc
-├── .env
-├── .eslintrc.js
-├── .gitignore
-├── .prettierignore
-├── .prettierrc
-├── webpack.config.js
+│   ├── ErrorBoundary.module.sass
+│   ├── ErrorBoundary.module.sass.d.ts
+│   ├── ErrorBoundary.tsx
+│   ├── components
+│   │   ├── App.module.sass
+│   │   ├── App.module.sass.d.ts
+│   │   └── App.tsx
+│   ├── index.sass
+│   └── index.tsx
+├── ts.config.js
+├── tsconfig.json
+├── webpack.config.ts
 └── yarn.lock
+
+4 directories, 28 files
 ```
 
 What's preconfigured:

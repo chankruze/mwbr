@@ -24,6 +24,14 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 				// Files: js/jsx,
 				// Pipes: babel-loader
 				{
+					test: /\.(ts|tsx)$/,
+					exclude: /node_modules/,
+					resolve: {
+						extensions: ['.ts', '.tsx', '.js', '.json']
+					},
+					use: 'ts-loader'
+				},
+				{
 					test: /\.(js|jsx)$/,
 					exclude: /node_modules/,
 					use: {
@@ -36,6 +44,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 					test: /\.module\.s(a|c)ss$/,
 					use: [
 						isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+						{ loader: 'css-modules-typescript-loader' },
 						{
 							loader: 'css-loader',
 							options: {
@@ -73,6 +82,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 					test: /\.module\.css$/,
 					use: [
 						isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+						{ loader: 'css-modules-typescript-loader' },
 						{
 							loader: 'css-loader',
 							options: {
@@ -162,7 +172,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 			new webpack.SourceMapDevToolPlugin({})
 		],
 		resolve: {
-			extensions: ['.js', '.jsx', '.scss', '.sass']
+			extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.sass']
 		},
 		devtool: false
 	});

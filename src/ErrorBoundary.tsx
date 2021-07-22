@@ -5,31 +5,41 @@ Created: Mon May 31 2021 15:48:05 GMT+0530 (India Standard Time)
 Copyright (c) Geekofia 2021 and beyond
 */
 
-import { Component } from 'react';
+import React, { Component, ErrorInfo, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 // css
 import styles from './ErrorBoundary.module.sass';
 
-export class ErrorBoundary extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { hasError: false, error: '', errorType: '', errorInfo: '' };
-	}
+interface Props {
+	children: ReactNode;
+}
 
-	static getDerivedStateFromError(error) {
+interface State {
+	hasError: boolean;
+	error?: Error;
+	errorType?: string;
+	errorInfo?: ErrorInfo;
+}
+
+export class ErrorBoundary extends Component<Props, State> {
+	public state: State = {
+		hasError: false
+	};
+
+	public static getDerivedStateFromError(error: Error): State {
 		// Update state so the next render will show the fallback UI.
-		const errorType = error.stack.split(':')[0];
+		const errorType = error.stack?.split(':')[0];
 		return { hasError: true, error, errorType };
 	}
 
-	componentDidCatch(error, errorInfo) {
+	public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
 		// You can also log the error to an error reporting service
 		// console.log({ error, errorInfo });
 		this.setState({ errorInfo });
 	}
 
-	render() {
+	public render() {
 		if (this.state.hasError) {
 			// custom fallback UI
 			return (
@@ -61,9 +71,5 @@ export class ErrorBoundary extends Component {
 		return this.props.children;
 	}
 }
-
-ErrorBoundary.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired
-};
 
 export default ErrorBoundary;
