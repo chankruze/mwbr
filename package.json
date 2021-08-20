@@ -6,6 +6,7 @@
 	"author": "chankruze <chankruze@gmail.com>",
 	"license": "MIT",
 	"scripts": {
+		"prestart": "yarn",
 		"start": "NODE_ENV='development' webpack-dev-server --open --mode development",
 		"build": "yarn lint && rm -rf dist && NODE_ENV='production' webpack --mode production --progress",
 		"lint": "eslint src/**/*.tsx",
@@ -19,6 +20,7 @@
 		"@types/node-sass": "^4.11.2",
 		"@types/react": "^17.0.14",
 		"@types/react-dom": "^17.0.9",
+		"@types/styled-components": "^5.1.12",
 		"@types/webpack-env": "^1.16.2",
 		"@typescript-eslint/eslint-plugin": "^4.28.4",
 		"@typescript-eslint/parser": "^4.28.4",
@@ -41,11 +43,15 @@
 		"sass-loader": "^10.1.0",
 		"source-map-loader": "^3.0.0",
 		"style-loader": "^2.0.0",
+		"styled-components": "^5.3.0",
 		"ts-loader": "8.3.0",
 		"typescript": "^4.3.5",
 		"webpack": "^4.44.2",
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0",
 		"webpack-merge": "^5.4.0"
+	},
+	"dependencies": {
+		"gsap": "^3.7.1"
 	}
 }

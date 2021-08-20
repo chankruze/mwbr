@@ -5,23 +5,14 @@ Created: Tue Nov 24 2020 07:04:05 GMT+0530 (India Standard Time)
 Copyright (c) Geekofia 2020 and beyond
 */
 
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import styles from './App.module.sass';
+import StyledCompSample from './sample/StyledCompSample';
 
 const App: FC = () => {
-	const [time, setTime] = useState(new Date().toLocaleTimeString());
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setTime(new Date().toLocaleTimeString());
-		}, 1000);
-
-		return () => clearInterval(interval);
-	}, []);
-
 	return (
 		<div className={styles.app}>
-			<h1>{time}</h1>
+			<StyledCompSample animate={true} />
 			<p>{process.env.TEST_VALUE}</p>
 			<p className={styles.desc}>
 				App created using chankruze&apos;s minimal WBR setup
