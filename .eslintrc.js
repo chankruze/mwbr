@@ -3,8 +3,15 @@ module.exports = {
 		browser: true,
 		es2021: true
 	},
-	extends: ['plugin:react/recommended'],
-	parser: 'babel-eslint',
+	extends: [
+		'plugin:react/recommended',
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:import/typescript',
+		'prettier',
+		'plugin:jest/recommended'
+	],
+	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true
@@ -13,7 +20,7 @@ module.exports = {
 		sourceType: 'module',
 		allowImportExportEverywhere: true
 	},
-	plugins: ['react'],
+	plugins: ['react', '@typescript-eslint', 'jest'],
 	rules: {
 		'react/no-unescaped-entities': 0,
 		'react/prop-types': 0,

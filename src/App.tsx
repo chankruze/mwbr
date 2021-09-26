@@ -7,7 +7,7 @@ Copyright (c) Geekofia 2020 and beyond
 
 import React, { FC } from 'react';
 import styles from './App.module.sass';
-import StyledCompSample from './sample/StyledCompSample';
+import StyledCompSample from './components/sample/StyledCompSample';
 
 const App: FC = () => {
 	return (

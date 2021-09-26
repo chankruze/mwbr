@@ -8,7 +8,7 @@ Copyright (c) Geekofia 2020 and beyond
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ErrorBoundary from './ErrorBoundary';
-import App from './components/App';
+import App from './App';
 
 import './index.sass';
 

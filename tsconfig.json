@@ -16,7 +16,7 @@
 		"jsx": "react",
 		"moduleResolution": "node"
 	},
-	"include": ["**/*"],
+	"include": ["src/*"],
 	"exclude": ["node_modules", "**/*.spec.ts"],
 	"awesomeTypescriptLoaderOptions": {
 		"useWebpackText": true,
