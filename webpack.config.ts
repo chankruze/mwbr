@@ -113,7 +113,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 					]
 				},
 				{
-					test: /\.(png|jpg|gif)$/,
+					test: /\.(png|jpg|jpeg|gif)$/,
 					use: [
 						{
 							loader: 'file-loader',
@@ -126,17 +126,11 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 				},
 				{
 					test: /\.svg$/,
-					use: [
-						{
-							loader: '@svgr/webpack',
-							options: {
-								jsx: true
-							}
-						}
-					]
+					// https://react-svgr.com/docs/webpack/
+					use: ['@svgr/webpack', 'file-loader'],
 				},
 				{
-					test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+					test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
 					exclude: /images/,
 					use: [
 						{

@@ -1,7 +1,11 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"lib": [
+			"DOM",
+			"DOM.Iterable",
+			"ESNext"
+		],
 		"allowJs": true,
 		"module": "commonjs",
 		"strict": true,
@@ -16,8 +20,13 @@
 		"jsx": "react",
 		"moduleResolution": "node"
 	},
-	"include": ["src/*"],
-	"exclude": ["node_modules", "**/*.spec.ts"],
+	"include": [
+		"src/*"
+	],
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	],
 	"awesomeTypescriptLoaderOptions": {
 		"useWebpackText": true,
 		"useTranspileModule": true,
