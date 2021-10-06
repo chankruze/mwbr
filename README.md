@@ -18,17 +18,13 @@ Default support for:
 Project structure:
 
 ```
+├── .babelrc
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
 ├── README.md
-├── _config.yml
-├── declarations.d.ts
-├── dist
-│   ├── CNAME
-│   ├── _redirects
-│   ├── index.html
-│   ├── main.7f0d5d4e10f1bf5fcaaa.css
-│   ├── main.js
-│   ├── manifest.json
-│   └── robots.txt
 ├── package.json
 ├── public
 │   ├── CNAME
@@ -37,21 +33,25 @@ Project structure:
 │   ├── manifest.json
 │   └── robots.txt
 ├── src
+│   ├── App.module.sass
+│   ├── App.module.sass.d.ts
+│   ├── App.tsx
 │   ├── ErrorBoundary.module.sass
 │   ├── ErrorBoundary.module.sass.d.ts
 │   ├── ErrorBoundary.tsx
+│   ├── assets
+│   │   └── undraw_WorkingLate.svg
 │   ├── components
-│   │   ├── App.module.sass
-│   │   ├── App.module.sass.d.ts
-│   │   └── App.tsx
+│   │   └── sample
+│   │       └── StyledCompSample.tsx
+│   ├── declarations.d.ts
 │   ├── index.sass
 │   └── index.tsx
-├── ts.config.js
 ├── tsconfig.json
 ├── webpack.config.ts
 └── yarn.lock
 
-4 directories, 28 files
+5 directories, 27 files
 ```
 
 What's preconfigured:
@@ -59,6 +59,8 @@ What's preconfigured:
 - HOT module replacement enabled
 - Live reloading enabled
 - babel
+- typescript
+- svg
 - prettier
 - es-lint
 - `_redirects` rule for routing in netlify hosting
@@ -117,4 +119,4 @@ Well, if you're here, you definitely know what you're going to do!
 
 The minimal setup's demo is [here](https://mwbr.netlify.app/)
 
-[![screenshot](https://res.cloudinary.com/chankruze/image/upload/v1606197207/github/Chankruze-s-Minimal-WBR-Setup.png)](https://mwbr.netlify.app/)
+[![screenshot](https://res.cloudinary.com/chankruze/image/upload/v1633516776/github/Chankruze-s-Minimal-WBR-Setup.png)](https://mwbr.netlify.app/)
